@@ -1,10 +1,7 @@
 # Spotify Audio-Based Recommender System
-
+`Python` · `scikit-learn` · `Keras` · `pandas` · `numpy` · Jupyter Notebook
 A content-based music recommender that uses **audio features only** without personalization.
 
-## Stack
-
-`Python` · `scikit-learn` · `Keras` · `pandas` · `numpy` · Jupyter Notebook
 ---
 
 ## Motivation
@@ -34,7 +31,7 @@ But for discovery purposes this is bad, since it covers less “ground” and ha
 
 ## Dataset
 
-- **Source:** Open-source Kaggle dataset (Spotify deprecated its audio feature API)
+- **Source:** Open-source Kaggle [dataset](https://github.com/neilvanthesman/Machine-Learning/blob/main/spotify.csv) (Spotify deprecated its audio feature API) 
 - **Size:** ~132,000 songs, 1920–2020
 - **Features:** `energy`, `loudness`, `acousticness`, `danceability`, `valence`, `tempo`, `instrumentalness`, `liveness`, `speechiness`, `mode`, `key`
 
