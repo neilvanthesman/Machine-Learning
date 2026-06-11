@@ -11,13 +11,13 @@ A content-based music recommender that uses **audio features only** without pers
 
 Spotify's recommendation engine (Discovery Weekly, Radio, Playlist Extension) is heavily tied to listening history. This creates two problems for discovery:
 
-1. Modifying your "Preference" requires weeks of retraining the SPotify algorithm.
+1. Modifying your "Preference" requires weeks of retraining the Spotify algorithm.
 2. This approach reamplifies what the User likes and has a high probability to avoid new things.
 It does satisfy the User more and is effective for personalized generation to incentivize long term User engagement. 
 But for discovery purposes this is bad, since it covers less “ground” and has the tendency to stay on certain areas of variance.
 
 
-> **Model vs. User distinction:** There's an important distinction between what the model is optimizing for and what the user actually wants. The model finds close neighbors in audio feature space to increase the probability of finding songs Users end up liking. But what users typically like may include: 
+**Model vs. User distinction:** There's an important distinction between what the model is optimizing for and what the user actually wants. The model finds close neighbors in audio feature space to increase the probability of finding songs Users end up liking. But what users typically like may include: 
 - songs that are adjacent in mood, 
 - songs with different mood but similar audio features,
 - or songs they'd enjoy even if they sound nothing like the query.
@@ -103,21 +103,54 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 | E | Lifehouse — Falling In | |
 | F | David Banner, Lil Flip — Like A Pimp | |
 
+
 **Me and Your Mama — Childish Gambino** *(a hard query — psychedelic soul is an ambiguous genre itself + song complexity)*
 
-| Simi | Track | Like |
-|------|-------|------|
-| A- | Aerosmith — Reefer Head Woman | ✓ |
-| A- | Bo Diddley — Goin' Down Slow | ✓ |
-| B | Carlos Santana — One With You | ✓ |
-| F | 2 LIVE CREW — Put Her In The Buck | |
-| F | "Weird Al" Yankovic — Word Crimes | |
+| Similarity | Track | Comment | Like |
+|------------|--------|----------|------|
+| F | 2 LIVE CREW <> Put Her In The Buck | | |
+| E | Pink Floyd <> Another Brick in the Wall, Pt. 2 | Lower score without the guitar solo. | |
+| A- | Aerosmith <> Reefer Head Woman | Similar vocal, instrumentation, energy, and subgenre (blues rock). | 1 |
+| B- | Curtis Mayfield <> I Plan to Stay a Believer | Similar subgenre, lower energy. Unsure if I like it enough. | ? |
+| F | Grupo Limite <> Te Aprovechas | | |
+| F | "Weird Al" Yankovic <> Word Crimes | | |
+| D | Atlanta Rhythm Section <> I'm Not Gonna Let It Bother Me Tonight | | |
+| D | The Velvet Underground <> Oh! Sweet Nuthin' | Similar subgenre, lower energy. | |
+| A- | Bo Diddley <> Goin' Down Slow | Similar energy and subgenre. | |
+| B | Carlos Santana <> One With You | Similar subgenre, lower energy. | 1 |
 
 **Result:** ~2–3 / 10 likeable. ~2–3 / 10 genuinely similar.
 
 ---
 
 ### KNN
+**Re:Re: — ASIAN KUNG-FU GENERATION**
+| Similarity | Track | Comment | Like |
+|------------|--------|----------|------|
+| B- | Earshot <> Get Away | Recommended in Cosine Sim. | 1 |
+| E | Lifehouse <> Falling In | Recommended in Cosine Sim. | -1 |
+| B- | Grouplove <> Lovely Cup | Recommended in Cosine Sim. | |
+| F | Excision, Datsik, Dirtyphonics <> Deviance - D | Interesting genre. | |
+| A- | The All-American Rejects <> One More Sad Song | Similar subgenre, energy, and instrumentation. | |
+| D | The Psychedelic Furs <> Love My Way | | |
+| C | The Strokes <> Heart In a Cage | Similar subgenre, lower energy. | |
+| S | Blake Shelton <> Honey Bee | Recommended in Cosine Sim. | |
+| D | Trace Adkins <> Swing | Interesting genre. | |
+| E | Lady Gaga <> Americano | | -1 |
+
+**Me and Your Mama — Childish Gambino** 
+| Similarity | Track | Comment | Like |
+|------------|--------|----------|------|
+| A- | Aerosmith <> Reefer Head Woman | Similar vocal, instrumentation, energy, and subgenre (blues rock). | 1 |
+| F | "Weird Al" Yankovic <> Word Crimes | Recommended in Cosine Sim. | -1 |
+| F | 2 LIVE CREW <> Put Her In The Buck | Recommended in Cosine Sim. | -1 |
+| C | Pescado Rabioso <> Las Habladurias del Mundo | Similar instrumentation and energy, but less tension/drama. It's easy to tick the Like column, but assigning similarity scores takes longer. | 1 |
+| E | The Flying Burrito Brothers <> Hot Burrito #1 | Straightforward; complexity is a strong trait of the query song. | |
+| E | Orchestra Studio 7 <> Anema e core - Musical base | Straightforward. | |
+| E | Pink Floyd <> Another Brick in the Wall, Pt. 2 | Lower score without the guitar solo. | |
+| E | R.E.M. <> I Remember California - Remastered | Slightly similar instrumentation, but straightforward overall. | |
+| C | Amon Düül II <> Archangels Thunderbird | Similar complexity, resulting in an interesting discovery experience. | 1? |
+| B | David Gilmour <> There's No Way Out of Here | Similar instrumentation and energy; falls into the simple vocals + guitar solo category. | |
 
 **Notable finding:** Several recommendations persisted across both Cosine Sim and KNN despite low similarity scores (e.g., Lifehouse — Falling In, ). When the same result appears regardless of algorithm, it suggests a **data issue** — those songs likely have extreme or misleading feature values that place them near many query songs in any feature space.
 
@@ -129,13 +162,18 @@ KNN performed worse on similarity scores but slightly better on likeability for 
 
 **Re:Re: — ASIAN KUNG-FU GENERATION**
 
-| Simi | Track | Like |
-|------|-------|------|
-| A | The Sonics — Boss Hoss | |
-| B- | Grouplove — Lovely Cup | |
-| B- | Earshot — Get Away | ✓ |
-| F | Lil Skies — Riot | |
-| F | Rick Ross, JAY-Z — Free Mason | ✓ |
+| Similarity | Track | Comment | Like |
+|------------|--------|----------|------|
+| E | Josh Kelley <> Amazing | Interesting to see a track with only 100k listeners. | |
+| C | Streetlight Manifesto <> Such Great Heights | Similar energy, different genre. | |
+| F | Lil Skies <> Riot | Hip-hop. | |
+| B- | Grouplove <> Lovely Cup | Recommended in Cosine Sim. | |
+| B- | Earshot <> Get Away | Recommended in Cosine Sim. | 1 |
+| E | Eazy-E <> Gimmie That Nutt | Hip-hop. The instrumental melody may have been averaged to reach a similar level as Re:Re:'s average profile. | |
+| C- | The Rolling Stones <> Love Is Strong | Similar genre. | |
+| A | The Sonics <> Boss Hoss | Similar vocal style and energy despite a different genre. | |
+| E | Lifehouse <> Falling In | Recommended in Cosine Sim. | |
+| F | Rick Ross, JAY-Z <> Free Mason | Hip-hop again. | 1 |
 
 Worst results of the three models in both similarity and likeability. The model is blind to anything outside audio features — including the user's broader taste context: Me personally liking Free Mason (hiphop genre) despite F similarity
 
