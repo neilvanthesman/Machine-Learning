@@ -94,14 +94,19 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 
 **Re:Re: — ASIAN KUNG-FU GENERATION**
 
-| Simi | Track | Like |
-|------|-------|------|
-| S | The Velvet Underground — Caroline | ✓ |
-| B | Tom Petty and the Heartbreakers — Even The Losers | ✓ |
-| B- | Earshot — Get Away | ✓ |
-| S | Blake Shelton — Honey Bee | |
-| E | Lifehouse — Falling In | |
-| F | David Banner, Lil Flip — Like A Pimp | |
+| Similarity | Track                                              | Comment                                                                                                             | Like |
+| ---------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---- |
+| S          | The Velvet Underground <> Caroline                 | I'm surprised how a song this far apart in time reached this level of similarity.                                   | 1    |
+| C          | Warren Zevon <> Looking for the Next Best Thing    | Minor to mid resemblance.                                                                                           |      |
+| B          | Tom Petty and the Heartbreakers <> Even The Losers |                                                                                                                     | 1    |
+| B-         | Earshot <> Get Away                                | Heavier rock.                                                                                                       | 1    |
+| B-         | Grouplove <> Lovely Cup                            |                                                                                                                     |      |
+| S          | Blake Shelton <> Honey Bee                         | Despite excluding tempo and genre in feature selection, parts of the melody sound like Re:Re:'s melody slowed down. |      |
+| C-         | Warren Zevon <> Excitable Boy                      | Minor to mid resemblance.                                                                                           |      |
+| E          | Lifehouse <> Falling In                            | No noticeable resemblance.                                                                                          |      |
+| F          | David Banner, Lil Flip <> Like A Pimp              | No noticeable resemblance.                                                                                          |      |
+| F          | Bleu Edmondson <> $50 Dollars and a Flask of C     | No noticeable resemblance.                                                                                          |      |
+
 
 
 **Me and Your Mama — Childish Gambino** *(a hard query — psychedelic soul is an ambiguous genre itself + song complexity)*
