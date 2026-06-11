@@ -65,7 +65,7 @@ While `mode` is used as a filter only, not included in the similarity vector.
 ### [Cosine Similarity (Baseline)](https://github.com/neilvanthesman/Machine-Learning/blob/main/Base.ipynb)
 Measures the angle between two songs in feature space. A score of 0.99 means near-identical audio profile direction, regardless of magnitude.
 
-### KNN — [K-Nearest Neighbors](https://github.com/neilvanthesman/Machine-Learning/blob/main/KNN.ipynb)
+### [KNN — K-Nearest Neighbors](https://github.com/neilvanthesman/Machine-Learning/blob/main/KNN.ipynb)
 Measures absolute Euclidean distance. More sensitive to feature magnitude than ratios. Score formula: `1 / (1 + d)`.
 
 ```
