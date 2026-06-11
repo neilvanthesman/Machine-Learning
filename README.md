@@ -1,5 +1,5 @@
 # Spotify Audio-Based Recommender System
-## `Python` · `scikit-learn` · `Keras` · `pandas` · `numpy` · Jupyter Notebook
+**`Python` · `scikit-learn` · `Keras` · `pandas` · `numpy` · Jupyter Notebook**
 A content-based music recommender that uses **audio features only** without personalization.
 
 ---
