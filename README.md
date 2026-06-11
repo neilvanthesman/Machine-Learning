@@ -101,7 +101,7 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 | B          | Tom Petty and the Heartbreakers <> Even The Losers |                                                                                                                     | 1    |
 | B-         | Earshot <> Get Away                                | Heavier rock.                                                                                                       | 1    |
 | B-         | Grouplove <> Lovely Cup                            |                                                                                                                     |      |
-| S          | Blake Shelton <> Honey Bee                         | Despite excluding tempo and genre in feature selection, parts of the melody sound like Re:Re:'s melody slowed down. |      |
+| S          | Blake Shelton <> Honey Bee                         | Parts of the melody sound like Re:Re:'s melody slowed down. |      |
 | C-         | Warren Zevon <> Excitable Boy                      | Minor to mid resemblance.                                                                                           |      |
 | E          | Lifehouse <> Falling In                            | No noticeable resemblance.                                                                                          |      |
 | F          | David Banner, Lil Flip <> Like A Pimp              | No noticeable resemblance.                                                                                          |      |
