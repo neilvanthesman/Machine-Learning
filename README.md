@@ -92,7 +92,7 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 `S` = near-identical | `A` = very similar | `B` = noticeably similar | `C` = minor | `D` = weak | `E` = barely noticeable | `F` = no resemblance
 ### Cosine Similarity
 
-**Re:Re: — ASIAN KUNG-FU GENERATION**
+**1. Re:Re: — ASIAN KUNG-FU GENERATION**
 
 | Similarity | Track                                              | Comment                                                                                                             | Like |
 | ---------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ---- |
@@ -109,7 +109,7 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 
 
 
-**Me and Your Mama — Childish Gambino** *(a hard query — psychedelic soul is an ambiguous genre itself + song complexity)*
+**2. Me and Your Mama — Childish Gambino** *(a hard query — psychedelic soul is an ambiguous genre itself + song complexity)*
 
 | Similarity | Track | Comment | Like |
 |------------|--------|----------|------|
@@ -124,7 +124,7 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 | A- | Bo Diddley <> Goin' Down Slow | Similar energy and subgenre. | |
 | B | Carlos Santana <> One With You | Similar subgenre, lower energy. | 1 |
 
-**Result:** ~2–3 / 10 likeable. ~2–3 / 10 genuinely similar.
+**Result:** 2–3/10 songs likeable. 2–3/10 songs are genuinely similar.
 
 ---
 
@@ -157,7 +157,8 @@ Vector distance alone isn't sufficient as a final metric — there's a gap betwe
 | C | Amon Düül II <> Archangels Thunderbird | Similar complexity, resulting in an interesting discovery experience. | 1? |
 | B | David Gilmour <> There's No Way Out of Here | Similar instrumentation and energy; falls into the simple vocals + guitar solo category. | |
 
-**Notable finding:** Several recommendations persisted across both Cosine Sim and KNN despite low similarity scores (e.g., Lifehouse — Falling In, ). When the same result appears regardless of algorithm, it suggests a **data issue** — those songs likely have extreme or misleading feature values that place them near many query songs in any feature space.
+**Notable finding:** Several recommendations persisted across both Cosine Sim and KNN despite low similarity scores (e.g., Lifehouse — Falling In, "Weird Al" Yankovic <> Word Crimes, 2 LIVE CREW <> Put Her In The Buck). 
+**data issue** — those songs likely have extreme or misleading feature values that place them near more query songs in any feature space.
 
 KNN performed worse on similarity scores but slightly better on likeability for the Childish Gambino query.
 
